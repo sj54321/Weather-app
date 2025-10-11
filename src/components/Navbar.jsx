@@ -3,7 +3,7 @@ import React from 'react';
 function Navbar({ darkMode, toggleDarkMode }) {
   return (
     <nav className={`navbar ${darkMode ? 'dark-mode' : ''}`}>
-      <div className="brand">NoWayWeather</div>
+      <div className="brand">Weather_Forcast</div>
       {/* <button className="dark-mode-toggle" onClick={toggleDarkMode}>
         {darkMode ? '☀️' : '🌙'}
       </button> */}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import WeatherDisplay from './components/WeatherDisplay';
 import ForecastDisplay from './components/ForecastDisplay';
+import BackcastDisplay from './components/BackcastDisplay';
 import './App.css';
 
 const API_KEY = '7aac9a6c9f5fa5076541ffc748f40bf7';
@@ -97,17 +98,29 @@ function App() {
         {loading && <div className="loading">Loading...</div>}
         {error && <div className="error">{error}</div>}
         {weatherData && forecastData && (
-          <div className="weather-forecast-container">
-            <WeatherDisplay
-              data={weatherData}
-              units={units}
-              toggleUnits={toggleUnits}
-              isFavorite={favorites.includes(weatherData.name)}
-              toggleFavorite={() => toggleFavorite(weatherData.name)}
-            />
-            <ForecastDisplay data={forecastData} units={units} />
-          </div>
-        )}
+  <>
+    <div className="weather-forecast-container">
+      <WeatherDisplay
+        data={weatherData}
+        units={units}
+        toggleUnits={toggleUnits}
+        isFavorite={favorites.includes(weatherData.name)}
+        toggleFavorite={() => toggleFavorite(weatherData.name)}
+      />
+      <ForecastDisplay data={forecastData} units={units} />
+    </div>
+
+    {/* Backcast below */}
+    <div className="backcast-wrapper">
+      <BackcastDisplay
+        city={weatherData.name}
+        coord={weatherData.coord}
+        units={units}
+      />
+    </div>
+  </>
+)}
+
         <div className="favorites glass-effect">
           <h3>Favorite Cities</h3>
           <ul className="favorites-list">

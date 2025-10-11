@@ -343,3 +343,22 @@ body {
   }
 }
 
+.weather-forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* New: Backcast below, full width */
+.backcast-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.backcast-wrapper .forecast-display {
+  max-width: 800px;  /* keeps it centered */
+  width: 100%;
+}
