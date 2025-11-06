@@ -362,3 +362,202 @@ body {
   max-width: 800px;  /* keeps it centered */
   width: 100%;
 }
+
+/* =============================== */
+/* 🔐 Authentication (Login/Signup) */
+/* =============================== */
+
+.auth-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+  background: var(--bg-color);
+}
+
+.auth-container {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  padding: 2rem;
+  width: 320px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.auth-container h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.auth-container input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.auth-container button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.auth-wrapper p {
+  color: var(--text-color);
+}
+
+.auth-wrapper button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.auth-wrapper button:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+/* ========================================= */
+/* 🌤️ AUTH PAGE DESIGN (Login / Signup) */
+/* ========================================= */
+
+.auth-page {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/images/weather-bg.jpg') no-repeat center center/cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* Add a dark overlay to make text readable */
+.auth-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* Center card */
+.auth-container {
+  position: relative;
+  z-index: 1;
+  width: 350px;
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  color: white;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Title */
+.auth-container h2 {
+  color: #fff;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Input Fields */
+.auth-container input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+}
+
+/* Button */
+.auth-container button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-container button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+}
+
+/* Error message */
+.auth-container .error {
+  background: rgba(255, 0, 0, 0.2);
+  color: #ffbaba;
+  margin-top: 10px;
+  border-radius: 8px;
+  padding: 6px;
+  font-size: 0.9rem;
+}
+
+/* Link */
+.auth-page p {
+  color: #f1f1f1;
+}
+
+.auth-page button.link-btn {
+  background: none;
+  border: none;
+  color: #00c6ff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.auth-page button.link-btn:hover {
+  text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
